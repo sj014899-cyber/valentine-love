@@ -1,183 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
 <meta charset="UTF-8">
-<title>My Valentine 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Week ❤️</title>
 
 <style>
-body{
-    margin:0;
-    font-family:'Segoe UI',sans-serif;
-    background:radial-gradient(circle,#1a001a,#000);
-    color:#fff;
-    text-align:center;
-    overflow-x:hidden;
-}
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        color: #fff;
+        font-family: "Noto Sans Devanagari", "Mangal", sans-serif;
+        text-align: center;
+        overflow-y: auto;
+    }
 
-.section{
-    background:rgba(255,0,80,0.15);
-    margin:30px auto;
-    padding:20px;
-    width:90%;
-    max-width:500px;
-    border-radius:20px;
-    box-shadow:0 0 25px rgba(255,0,120,0.4);
-    animation:fadeIn 1.2s ease;
-}
+    h1 {
+        color: #ff4d6d;
+        margin-top: 20px;
+        font-size: 3rem;
+    }
 
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
-}
+    .day-wish {
+        margin: 30px auto;
+        max-width: 90%;
+        font-size: 1.8rem;
+        line-height: 2;
+        padding: 25px;
+        border: 2px solid #ff4d6d;
+        border-radius: 18px;
+        background: rgba(255, 77, 109, 0.12);
+    }
 
-h1,h2,h3{color:#ff66b2;}
-.quote{font-style:italic;color:#ffd6ea;}
+    .photo-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        margin: 40px 10px 80px;
+    }
 
-.decor{
-    font-size:40px;
-    animation:bounce 2s infinite;
-}
-@keyframes bounce{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-}
+    .photo-gallery img {
+        width: 300px;
+        height: auto;
+        border-radius: 18px;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-/* Floating hearts */
-.heart{
-    position:fixed;
-    bottom:-10px;
-    font-size:18px;
-    animation:floatUp 8s linear infinite;
-    opacity:0.6;
-}
-@keyframes floatUp{
-    from{transform:translateY(0);}
-    to{transform:translateY(-120vh); opacity:0;}
-}
+    .photo-gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px #ff4d6d;
+    }
 
-button{
-    padding:15px 30px;
-    border:none;
-    border-radius:25px;
-    font-size:18px;
-    cursor:pointer;
-}
+    .image-viewer {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.95);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
 
-#yes{
-    background:#ff2f92;
-    color:white;
-    box-shadow:0 0 15px #ff2f92;
-}
+    .image-viewer img {
+        max-width: 95%;
+        max-height: 95%;
+        border-radius: 20px;
+    }
 
-#no{
-    background:#333;
-    color:white;
-    position:absolute;
-}
-
-.photos img{
-    width:120px;
-    height:120px;
-    object-fit:cover;
-    border-radius:15px;
-    margin:5px;
-    box-shadow:0 0 10px #ff2f92;
-}
+    .image-viewer span {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 3rem;
+        color: #fff;
+        cursor: pointer;
+    }
 </style>
 </head>
 
 <body>
 
-<h1>💖 Valentine’s Week Wishes 💖</h1>
+<h1>व्हॅलेंटाईन आठवडा ❤️</h1>
 
-<div class="section">
-<!-- ✏️ CHANGE HER NAME HERE -->
-<h2>For <span>✨ MAZI PURANLPOLI ✨  </span> 💕</h2>
-
-<div class="decor">🧸❤️🧸</div>
+<div class="day-wish">
+🌹 <b>रोज डे</b><br>
+तू माझ्या आयुष्यात फुललेला तो गुलाब आहेस,<br>
+ज्याच्या सुगंधाने माझं संपूर्ण जग सुंदर झालं आहे.
 </div>
 
-<div class="section">
-<h3>🌹 Rose Day</h3>
-<p class="quote">"तू माझ्या आयुष्यातील सर्वात सुंदर गुलाब आहेस."</p>
+<div class="day-wish">
+💌 <b>प्रपोज डे</b><br>
+तुला पाहिलं की मन आपोआप थांबतं,<br>
+कारण माझं प्रत्येक स्वप्न तुझ्याशीच जोडलेलं आहे.
 </div>
 
-<div class="section">
-<h3>🤗 Propose Day</h3>
-<p class="quote">"माझ्या प्रत्येक स्वप्नात फक्त तूच आहेस."</p>
+<div class="day-wish">
+🍫 <b>चॉकलेट डे</b><br>
+तुझ्या आठवणी चॉकलेटसारख्या गोड आहेत,<br>
+ज्या आयुष्याला कायमची चव देतात.
 </div>
 
-<div class="section">
-<h3>🍫 Chocolate Day</h3>
-<p class="quote">"तुझ्या हसण्यात आयुष्याची गोडी आहे."</p>
+<div class="day-wish">
+🧸 <b>टेडी डे</b><br>
+तू माझ्या आयुष्यातली ती मिठी आहेस,<br>
+जी थकलेलं मन शांत करून टाकते.
 </div>
 
-<div class="section">
-<h3>🧸 Teddy Day</h3>
-<p class="quote">"तुझ्या मिठीतच मला सगळा आराम मिळतो."</p>
-<div class="decor">🧸🧸🧸</div>
+<div class="day-wish">
+💍 <b>प्रॉमिस डे</b><br>
+मी शब्द नाही, मन देतो,<br>
+आणि वचन देतो — शेवटपर्यंत तुझ्यासोबत राहीन.
 </div>
 
-<div class="section">
-<h3>🤝 Promise Day</h3>
-<p class="quote">"तुझा हात कधीच सोडणार नाही."</p>
+<div class="day-wish">
+🤗 <b>हग डे</b><br>
+तुझ्या मिठीत असा आधार आहे,<br>
+जिथे सगळ्या भीती आपोआप विरून जातात.
 </div>
 
-<div class="section">
-<h3>🤗 Hug Day</h3>
-<p class="quote">"तुझ्या मिठीत सगळे दुःख विसरतो."</p>
+<div class="day-wish">
+😘 <b>किस डे</b><br>
+तो एक क्षण, तो एक स्पर्श,<br>
+ज्यात सगळं जग थांबलेलं वाटतं.
 </div>
 
-<div class="section">
-<h3>💋 Kiss Day</h3>
-<p class="quote">"तुझ्या ओठांवरचं हास्य माझं जग आहे."</p>
+<div class="day-wish">
+❤️ <b>व्हॅलेंटाईन डे</b><br>
+तू माझं आज आहेस,<br>
+माझं उद्या आहेस,<br>
+आणि माझं कायमचं प्रेम आहेस.
 </div>
 
-<div class="section">
-<h3>❤️ Valentine’s Day</h3>
-<p class="quote">"तूच माझं प्रेम, तूच माझं आयुष्य."</p>
+<div class="photo-gallery">
+    <img src="photo1.jpg" onclick="openImage(this.src)">
+    <img src="photo2.jpg" onclick="openImage(this.src)">
+    <img src="photo3.jpg" onclick="openImage(this.src)">
+    <img src="photo4.jpg" onclick="openImage(this.src)">
 </div>
 
-<div class="section">
-<h2>Will you be my Valentine? 💌</h2><br>
-<button id="yes">Hoo 💖</button>
-<button id="no">Nahi 😜</button>
-</div>
-
-<div class="section">
-<h2>📸 Our Memories</h2>
-
-<!-- 📸 PUT YOUR PHOTO FILE NAMES HERE -->
-<div class="photos">
-<img src="photo1.jpg">
-<img src="photo2.jpg">
-<img src="photo3.jpg">
-</div>
-
+<div class="image-viewer" id="viewer">
+    <span onclick="closeImage()">×</span>
+    <img id="viewerImg">
 </div>
 
 <script>
-/* Floating hearts */
-setInterval(()=>{
-    const h=document.createElement("div");
-    h.className="heart";
-    h.style.left=Math.random()*100+"vw";
-    h.innerText="🖤";
-    document.body.appendChild(h);
-    setTimeout(()=>h.remove(),8000);
-},500);
+function openImage(src) {
+    document.getElementById("viewer").style.display = "flex";
+    document.getElementById("viewerImg").src = src;
+}
 
-/* Buttons */
-const noBtn=document.getElementById("no");
-const yesBtn=document.getElementById("yes");
-
-noBtn.onmouseover=()=>{
-    noBtn.style.left=Math.random()*300+"px";
-    noBtn.style.top=Math.random()*300+"px";
-    yesBtn.style.transform="scale(1.3)";
-};
-
-yesBtn.onclick=()=>alert("She said YES 💖😍");
+function closeImage() {
+    document.getElementById("viewer").style.display = "none";
+}
 </script>
 
 </body>
