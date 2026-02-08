@@ -6,180 +6,205 @@
 <title>Valentine Week ❤️</title>
 
 <style>
-/* -------- BODY & HEARTBEAT -------- */
-body {
-    margin: 0;
-    padding: 0;
-    background: radial-gradient(circle at center, #22000d, #000);
-    color: #fff;
-    font-family: "Noto Sans Devanagari", "Mangal", sans-serif;
-    text-align: center;
-    overflow-x: hidden;
-    animation: heartbeatBg 4s infinite;
+body{
+    margin:0;
+    padding:0;
+    background:radial-gradient(circle at center,#22000d,#000);
+    color:#fff;
+    font-family:"Noto Sans Devanagari","Mangal",sans-serif;
+    text-align:center;
+    overflow-x:hidden;
+    animation:heartbeatBg 4s infinite;
+}
+@keyframes heartbeatBg{
+    0%,100%{background-size:100% 100%}
+    50%{background-size:110% 110%}
+}
+h1{
+    color:#ff4d6d;
+    font-size:3rem;
+    margin:25px 0;
+    position:relative;
+    z-index:2;
+}
+.day-wish{
+    margin:40px auto;
+    max-width:90%;
+    font-size:1.8rem;
+    line-height:2;
+    padding:30px;
+    border:2px solid #ff4d6d;
+    border-radius:22px;
+    background:rgba(255,77,109,0.15);
+    position:relative;
+    z-index:2;
 }
 
-@keyframes heartbeatBg {
-    0%, 100% { background-size: 100% 100%; }
-    50% { background-size: 110% 110%; }
+/* Buttons */
+.button-box{margin-top:35px; position:relative;}
+.yes-btn{
+    padding:15px 45px;
+    font-size:22px;
+    border-radius:40px;
+    border:none;
+    background:#ff2f6e;
+    color:#fff;
+    cursor:pointer;
+    transition:transform .3s;
+}
+.no-btn{
+    padding:15px 45px;
+    font-size:22px;
+    border-radius:40px;
+    border:none;
+    background:#333;
+    color:#fff;
+    cursor:pointer;
+    position:absolute;
+    left:55%;
 }
 
-h1 {
-    color: #ff4d6d;
-    margin: 25px 0;
-    font-size: 3rem;
-    z-index: 2;
-    position: relative;
+/* Photos */
+.photo-gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+    margin:60px 10px 100px;
+    position:relative;
+    z-index:2;
+}
+.photo-gallery img{
+    width:300px;
+    border-radius:22px;
+    cursor:pointer;
+    transition:transform .3s,box-shadow .3s;
+}
+.photo-gallery img:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 35px #ff4d6d;
 }
 
-/* -------- WISH BOX -------- */
-.day-wish {
-    margin: 40px auto;
-    max-width: 90%;
-    font-size: 1.8rem;
-    line-height: 2;
-    padding: 30px;
-    border: 2px solid #ff4d6d;
-    border-radius: 22px;
-    background: rgba(255, 77, 109, 0.15);
-    z-index: 2;
-    position: relative;
+/* Viewer */
+.image-viewer{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.95);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+.image-viewer img{
+    max-width:95%;
+    max-height:95%;
+    border-radius:20px;
+}
+.image-viewer span{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:3rem;
+    cursor:pointer;
 }
 
-/* -------- PHOTOS -------- */
-.photo-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    margin: 60px 10px 100px;
-    position: relative;
-    z-index: 2;
+/* Floating decor */
+.floating{
+    position:fixed;
+    top:-10%;
+    font-size:30px;
+    animation:floatDown linear infinite;
+    opacity:.7;
+    z-index:1;
+}
+@keyframes floatDown{
+    0%{transform:translateY(-10vh) rotate(0);opacity:0}
+    10%{opacity:.8}
+    100%{transform:translateY(110vh) rotate(360deg);opacity:0}
 }
 
-.photo-gallery img {
-    width: 300px;
-    border-radius: 22px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+/* Teddy pop */
+.teddy{
+    position:fixed;
+    font-size:45px;
+    animation:teddyPop 3s ease-in-out;
+    z-index:3;
 }
-
-.photo-gallery img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 35px #ff4d6d;
-}
-
-/* -------- FULL IMAGE VIEW -------- */
-.image-viewer {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.95);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-.image-viewer img {
-    max-width: 95%;
-    max-height: 95%;
-    border-radius: 20px;
-}
-
-.image-viewer span {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 3rem;
-    cursor: pointer;
-}
-
-/* -------- FLOATING DECOR -------- */
-.floating {
-    position: fixed;
-    top: -10%;
-    font-size: 30px;
-    animation: floatDown linear infinite;
-    opacity: 0.7;
-    z-index: 1;
-}
-
-@keyframes floatDown {
-    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.8; }
-    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
-}
-
-/* -------- TEDDY POP -------- */
-.teddy {
-    position: fixed;
-    font-size: 45px;
-    animation: teddyPop 3s ease-in-out;
-    z-index: 3;
-}
-
-@keyframes teddyPop {
-    0% { transform: scale(0); opacity: 0; }
-    30% { transform: scale(1.2); opacity: 1; }
-    70% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(0); opacity: 0; }
+@keyframes teddyPop{
+    0%{transform:scale(0);opacity:0}
+    30%{transform:scale(1.2);opacity:1}
+    70%{transform:scale(1);opacity:1}
+    100%{transform:scale(0);opacity:0}
 }
 </style>
 </head>
 
 <body>
 
-<!-- FLOATING HEARTS / FLOWERS -->
-<div class="floating" style="left:5%; animation-duration:12s;">🖤</div>
-<div class="floating" style="left:15%; animation-duration:16s;">❤️</div>
-<div class="floating" style="left:25%; animation-duration:18s;">🌹</div>
-<div class="floating" style="left:35%; animation-duration:20s;">🌸</div>
-<div class="floating" style="left:45%; animation-duration:14s;">❤️</div>
-<div class="floating" style="left:55%; animation-duration:22s;">🖤</div>
-<div class="floating" style="left:65%; animation-duration:17s;">🌹</div>
-<div class="floating" style="left:75%; animation-duration:19s;">❤️</div>
-<div class="floating" style="left:85%; animation-duration:21s;">🌸</div>
+<!-- Floating icons -->
+<div class="floating" style="left:10%;animation-duration:15s;">🖤</div>
+<div class="floating" style="left:25%;animation-duration:18s;">❤️</div>
+<div class="floating" style="left:40%;animation-duration:21s;">🌹</div>
+<div class="floating" style="left:55%;animation-duration:17s;">🌸</div>
+<div class="floating" style="left:70%;animation-duration:20s;">🧸</div>
+<div class="floating" style="left:85%;animation-duration:23s;">❤️</div>
 
-<𝗵𝟭> 𝐕𝐀𝐋𝐄𝐍𝐓𝐈𝐍𝐄 𝐖𝐄𝐄𝐊</𝗵𝟭> ❤️</h1>
+<h1>व्हॅलेंटाईन आठवडा ❤️</h1>
 
-<div class="day-wish">🌹 <ｂ>ＲＯＳＥ ＤＡＹ</ｂ></b><br>
+<div class="day-wish">
+🌹 <b>रोज डे</b><br>
 तू माझ्या आयुष्यात फुललेला तो गुलाब आहेस,<br>
 ज्याच्या सुगंधाने माझं संपूर्ण जग सुंदर झालं आहे.
 </div>
 
-<div class="day-wish">💌 <b>ＰＲＡＰＯＳＥ ＤＡＹ</b><br>
+<div class="day-wish">
+💌 <b>प्रपोज डे</b><br>
 तुला पाहिलं की मन आपोआप थांबतं,<br>
 कारण माझं प्रत्येक स्वप्न तुझ्याशीच जोडलेलं आहे.
 </div>
 
-<div class="day-wish">🍫 <b>ＣＨＯＣＫＬＡＴＥ ＤＡＹ</b><br>
+<div class="day-wish">
+🍫 <b>चॉकलेट डे</b><br>
 तुझ्या आठवणी चॉकलेटसारख्या गोड आहेत,<br>
 ज्या आयुष्याला कायमची चव देतात.
 </div>
 
-<div class="day-wish">🧸 <b>ＴＥＤＤＹ ＤＡＹ</b><br>
+<div class="day-wish">
+🧸 <b>टेडी डे</b><br>
 तू माझ्या आयुष्यातली ती मिठी आहेस,<br>
 जी थकलेलं मन शांत करून टाकते.
 </div>
 
-<div class="day-wish">💍 <b>ＰＲＯＭＩＳＥ ＤＡＹ</b><br>
+<div class="day-wish">
+💍 <b>प्रॉमिस डे</b><br>
 मी शब्द नाही, मन देतो,<br>
 आणि वचन देतो — शेवटपर्यंत तुझ्यासोबत राहीन.
 </div>
 
-<div class="day-wish">🤗 <b>ＨＵＧ ＤＡＹ</b><br>
+<div class="day-wish">
+🤗 <b>हग डे</b><br>
 तुझ्या मिठीत असा आधार आहे,<br>
 जिथे सगळ्या भीती आपोआप विरून जातात.
 </div>
 
-<div class="day-wish">😘 <b>ＫＩＳＳ ＤＡＹ</b><br>
+<div class="day-wish">
+😘 <b>किस डे</b><br>
 तो एक क्षण, तो एक स्पर्श,<br>
 ज्यात सगळं जग थांबलेलं वाटतं.
 </div>
 
-<div class="day-wish">❤️ <b>ＶＡＬＥＮＴＩＮＥ ＤＡＹ</b><br>
+<div class="day-wish">
+❤️ <b>व्हॅलेंटाईन डे</b><br>
 तू माझं आज आहेस,<br>
 माझं उद्या आहेस,<br>
-आणि माझं कायमचं प्रेम आहेस.
+आणि माझं कायमचं प्रेम आहेस.<br><br>
+
+<b>Will you be my Valentine? 💘</b>
+
+<div class="button-box">
+    <button class="yes-btn" onclick="yesClick()">Hoo ❤️</button>
+    <button class="no-btn" id="noBtn">Nahi 😜</button>
+</div>
 </div>
 
 <div class="photo-gallery">
@@ -194,24 +219,37 @@ h1 {
 </div>
 
 <script>
-function openImage(src) {
-    document.getElementById("viewer").style.display = "flex";
-    document.getElementById("viewerImg").src = src;
+function openImage(src){
+    viewer.style.display="flex";
+    viewerImg.src=src;
 }
-function closeImage() {
-    document.getElementById("viewer").style.display = "none";
+function closeImage(){
+    viewer.style.display="none";
 }
 
-/* TEDDY RANDOM POP */
-setInterval(() => {
-    const teddy = document.createElement("div");
-    teddy.className = "teddy";
-    teddy.innerText = "🧸";
-    teddy.style.left = Math.random() * 80 + "%";
-    teddy.style.top = Math.random() * 70 + "%";
-    document.body.appendChild(teddy);
-    setTimeout(() => teddy.remove(), 3000);
-}, 6000);
+/* Nahi button runs */
+const noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseover",()=>{
+    noBtn.style.left=Math.random()*70+"%";
+    noBtn.style.top=Math.random()*70+"%";
+    document.querySelector(".yes-btn").style.transform="scale(1.2)";
+});
+
+/* Yes click */
+function yesClick(){
+    alert("Yayyy! 💖 मला माहित होतं तू होच म्हणशील 😍");
+}
+
+/* Teddy pop */
+setInterval(()=>{
+    const t=document.createElement("div");
+    t.className="teddy";
+    t.innerText="🧸";
+    t.style.left=Math.random()*80+"%";
+    t.style.top=Math.random()*70+"%";
+    document.body.appendChild(t);
+    setTimeout(()=>t.remove(),3000);
+},6000);
 </script>
 
 </body>
